@@ -22,12 +22,12 @@ class ArticlesController < ApplicationController
 
   def update
     @article.update(article_params)
-    redirect_to article_path(@articles)
+    redirect_to article_path(@article)
   end
 
   def destroy
     @article.destroy
-    redirect_to articles_path, status: see_other
+    redirect_to articles_path, status: :see_other
   end
 
   private
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  def restaurant_params
+  def article_params
     params.require(:article).permit(:title, :content)
   end
 end

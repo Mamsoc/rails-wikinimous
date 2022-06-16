@@ -1,0 +1,5 @@
+<h1><%= @article.title %></h1>
+<p><%= @article.content %></p>
+<%= link_to "Mettre à jour", edit_article_path(@article) %>
+<%= link_to "Tous les articles", articles_path %>
+<%= link_to "Supprimer l'article", article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Confirmer la suppression de cet article?"} %>
